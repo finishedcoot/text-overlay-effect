@@ -1,23 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import useScrollPosition from "./useScrollPosition";
 
 function App() {
+  const scrollPos = useScrollPosition();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="page-wrapper">
+      <div className="text-parent">
+        <h1
+          style={{
+            transform: `translate3d(-${scrollPos / 2}px,-${
+              scrollPos * 0.1
+            }px,0px)`,
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          To live is the rarest thing in the world.
+        </h1>
+        <h1
+          style={{
+            transform: `translate3d(${scrollPos / 2}px,${
+              scrollPos * 0.1
+            }px,0px)`,
+          }}
+        >
+          Learn as if you were to live forever
+        </h1>
+      </div>
+
+      <img
+        style={{
+          transform: `translate3d(-50%,calc(-${scrollPos * 0.9}px-50%),0px)`,
+        }}
+        className="text-outline-image"
+        src="/jelly-fish.jpg"
+        alt=""
+      />
+
+      <div className="text-parent">
+        <h1
+          style={{
+            transform: `translate3d(-${scrollPos / 2}px,-${
+              scrollPos * 0.1
+            }px,0px)`,
+          }}
+          className="outline"
+        >
+          To live is the rarest thing in the world.
+        </h1>
+        <h1
+          style={{
+            transform: `translate3d(${scrollPos / 2}px,${
+              scrollPos * 0.1
+            }px,0px)`,
+          }}
+          className="outline"
+        >
+          Learn as if you were to live forever
+        </h1>
+      </div>
     </div>
   );
 }

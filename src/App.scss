@@ -1,0 +1,48 @@
+.page-wrapper {
+  height: 200vh;
+  width: 100vw;
+  background-color: rgb(12, 12, 12);
+  position: relative;
+  overflow: hidden;
+
+  .text-outline-image {
+    position: absolute;
+    max-height: 70%;
+    object-fit: contain;
+    top: 55%;
+    left: 35%;
+    z-index: 2;
+  }
+
+  .text-parent {
+    position: absolute;
+    top: 65%;
+
+    &:first-of-type {
+      z-index: 1;
+    }
+
+    &:last-of-type {
+      z-index: 3;
+    }
+
+    h1 {
+      color: white;
+      line-height: 110%;
+      font-size: 7.8vw;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      font-weight: bold;
+      font-family: sequel, sans-serif;
+
+      &.outline {
+        -webkit-text-stroke: 2px white;
+        color: transparent;
+      }
+      &:last-of-type {
+        margin-left: -30%;
+      }
+    }
+  }
+}
